@@ -1,0 +1,14 @@
+<div class="banner d-flex justify-content-between sticky-top">
+  <%= link_to "Rails-RestaurantList", restaurants_path, id: "app_name" %>
+  <%= link_to "New Restaurant", new_restaurant_path, class:"btn btn-primary"%>
+</div>
+<div class="container">
+  <h1 class="text-center">Restaurants list</h1>
+  <div class="restaurant text-center">
+    <% @restaurants.each do |restaurant| %>
+      <%= link_to restaurant.name, restaurant_path(restaurant), class: "title" %> 
+      <p><%=restaurant.address%></p>
+      <p>Type: <%=restaurant.category%></p>  
+    <% end %>
+  </div>
+</div>

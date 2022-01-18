@@ -1,0 +1,19 @@
+<div class="banner d-flex justify-content-between sticky-top">
+  <%= link_to "Rails-RestaurantList", restaurants_path, id: "app_name" %>
+  <%= link_to "Leave a review", new_restaurant_review_path(@restaurant), class:"btn btn-primary"%>
+</div>
+<div class="container">
+  <h1 class="text-center"><%=@restaurant.name%> Reviews</h1>
+  <div class="reviews text-center">
+    <div class="review">
+      <% @reviews.each do |review| %>
+      <p><%=review.content%></p>
+      <p> <% review.rating.times do %>
+          <%=icon('fas', 'star')%>
+          <%end%>
+      </p>
+
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+
+<div class="container">
+  <h2><%= @restaurant.name %></h2>
+  <p><%= @restaurant.address %></p>
+  <%= link_to icon('fas', 'undo')+"Back to list", restaurants_path%>
+  <%= link_to icon('far', 'edit') + "Reviews", restaurant_reviews_path(@restaurant) %>
+</div>
